@@ -1,0 +1,286 @@
+/*______Базовая разметка______*/
+/*
+ * Box-sizing-model
+ */
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/*
+ * Responsive images
+*/
+img {
+  max-width: 100%;
+  height: auto;
+}
+/*
+ * Cursor change on hover on Buttons
+*/
+input[type="submit"] {
+  cursor: pointer;
+}
+/*
+ * A better looking default horizontal rule
+ */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+/*
+ * Allow only vertical resizing of textareas.
+ */
+textarea {
+  resize: vertical;
+}
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+.clearfix:after {
+  clear: both;
+}
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+.header {
+  width: 100%;
+  height: auto;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: #000;
+}
+.header__wrap {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.navigation__list {
+  list-style-type: none;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 0px;
+  display: none;
+  z-index: 98;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #555452;
+}
+.navigation__list--open {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+@media (min-width: 992px) {
+  .navigation__list {
+    margin: 0 auto;
+    background-color: transparent;
+    position: relative;
+    display: block;
+  }
+}
+.navigation__list li {
+  margin: 0;
+  padding: 0;
+  display: block;
+  margin-bottom: 20px;
+}
+@media (min-width: 992px) {
+  .navigation__list li {
+    margin-right: 20px;
+    margin-bottom: 0;
+    display: inline-block;
+  }
+}
+.navigation__list li:last-child {
+  margin-right: 0;
+}
+.navigation__list a {
+  font-family: 'Montserrat', sans-serif;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 300;
+  text-decoration: none;
+  -webkit-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+}
+.navigation__list a:hover,
+.navigation__list a:active,
+.navigation__list a:focus {
+  color: #998675;
+}
+@media (min-width: 1200px) {
+  .navigation__list a {
+    font-size: 20px;
+  }
+}
+.navigation__toggle {
+  display: block;
+  font-size: 38px;
+  position: absolute;
+  top: 23px;
+  right: 16px;
+  cursor: pointer;
+  z-index: 2;
+}
+@media (min-width: 1200px) {
+  .navigation__toggle {
+    display: none;
+  }
+}
+.navigation__toggle--fixed {
+  position: fixed;
+}
+.cmn-toggle-switch {
+  font-size: 0;
+  position: fixed;
+  z-index: 99;
+  top: 20px;
+  right: 16px;
+  display: block;
+  overflow: hidden;
+  width: 50px;
+  height: 45px;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  -webkit-transition: background 0.3s;
+  transition: background 0.3s;
+  text-indent: -9999px;
+}
+@media (min-width: 992px) {
+  .cmn-toggle-switch {
+    display: none;
+  }
+}
+.cmn-toggle-switch:focus {
+  outline: none;
+}
+.cmn-toggle-switch span {
+  display: block;
+  position: absolute;
+  top: 20px;
+  left: 5px;
+  right: 5px;
+  height: 5px;
+  background: #998675;
+}
+.cmn-toggle-switch span::before,
+.cmn-toggle-switch span::after {
+  position: absolute;
+  display: block;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: #998675;
+  content: "";
+}
+.cmn-toggle-switch span::before {
+  top: -12px;
+}
+.cmn-toggle-switch span::after {
+  bottom: -12px;
+}
+/**
+ * Style 2
+ */
+.cmn-toggle-switch__htx {
+  background: transparent;
+}
+.cmn-toggle-switch__htx span {
+  -webkit-transition: background 0.3s;
+  transition: background 0.3s;
+}
+.cmn-toggle-switch__htx span::before,
+.cmn-toggle-switch__htx span::after {
+  -webkit-transition-duration: 0.3s, 0.3s;
+  transition-duration: 0.3s, 0.3s;
+  -webkit-transition-delay: 0.3s, 0;
+  transition-delay: 0.3s, 0;
+}
+.cmn-toggle-switch__htx span::before {
+  -webkit-transition-property: top, -webkit-transform;
+  transition-property: top, -webkit-transform;
+  transition-property: top, transform;
+  transition-property: top, transform, -webkit-transform;
+}
+.cmn-toggle-switch__htx span::after {
+  -webkit-transition-property: bottom, -webkit-transform;
+  transition-property: bottom, -webkit-transform;
+  transition-property: bottom, transform;
+  transition-property: bottom, transform, -webkit-transform;
+}
+/* active state*/
+.cmn-toggle-switch__htx.active {
+  position: fixed;
+}
+.cmn-toggle-switch__htx.active span {
+  background: none;
+}
+.cmn-toggle-switch__htx.active span::before {
+  top: 0;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.cmn-toggle-switch__htx.active span::after {
+  bottom: 0;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.cmn-toggle-switch__htx.active span::before,
+.cmn-toggle-switch__htx.active span::after {
+  -webkit-transition-delay: 0, 0.3s;
+  transition-delay: 0, 0.3s;
+}
+/*.navigation__button-block{
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #BDBDBD;
+
+    @media (min-width: 768px){
+      display: none;
+    }
+}*/
